@@ -121,8 +121,7 @@ function endQuiz() {
     if (isCorrect) score++;
 
     const questionResult = document.createElement('div');
-    questionResult.style.marginBottom = '2rem';
-    questionResult.style.marginTop = '2rem';
+    questionResult.style.marginBottom = '1.5rem';
     questionResult.innerHTML = `
       <h3>Q${index + 1}: ${q.question}</h3>
       <p><strong>Your answer:</strong> ${userAnswer !== null ? q.options[userAnswer] : '<em>Skipped</em>'}</p>
