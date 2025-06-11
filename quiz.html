@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Master Challenge</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="styles/quiz.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <!-- Welcome Screen -->
+  <section class="welcome-screen" id="welcomeScreen">
+    <div class="card">
+      <h1>Welcome to Quiz Master Challenge!</h1>
+      
+      <div class="welcome-content">
+        <p>Test your knowledge across various subjects with our interactive quiz platform. Whether you're a beginner or an expert, we have questions tailored to your level.</p>
+        <p>The quiz will challenge your understanding with multiple-choice questions. You'll have limited time for each question, so think fast!</p>
+      </div>
+      
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-book"></i>
+          <h3>Multiple Subjects</h3>
+          <p>Math, English, Science and more</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-chart-line"></i>
+          <h3>Three Difficulty Levels</h3>
+          <p>From beginner to expert</p>
+        </div>
+      </div>
+      
+      <button class="btn" onclick="showStartScreen()">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Start Screen -->
+  <section class="start-screen hidden" id="startScreen">
+    <div class="card">
+      <h1>Let's Begin Your Quiz!</h1>
+      
+      <div class="form-group">
+        <label for="level">Choose Level:</label>
+        <select id="level">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">advanced</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="subject">Choose Subject:</label>
+        <select id="subject">
+          <option value="math">Mathematics</option>
+          <option value="english">English Language</option>
+          <option value="biology">Biology</option>
+          <option value="physics">Physics</option>
+          <option value="chemistry">Chemistry</option>
+        </select>
+      </div>
+      
+      <button class="btn" onclick="startQuiz()">Start Quiz Now</button>
+    </div>
+  </section>
+
+  <!-- Quiz Screen -->
+  <section class="quiz-screen hidden" id="quizScreen">
+    <div class="card">
+      <div class="quiz-header">
+        <div class="subject-info" id="subjectInfo"></div>
+        <div class="timer" style="color: red;">Time left: <span id="time">15</span>s</div>
+      </div>
+      
+      <div class="progress-container">
+        <div class="progress-bar" id="progress"></div>
+      </div>
+      
+      <div class="question" id="questionBox"></div>
+      
+      <div class="options-container" id="optionsBox"></div>
+    </div>
+  </section>
+
+  <!-- Result Screen -->
+  <section class="result-screen hidden" id="resultScreen">
+    <div class="card">
+      <h2>Quiz Results</h2>
+      <div id="resultBox"></div>
+      <button class="btn" onclick="restartQuiz()">Take Another Quiz</button>
+    </div>
+  </section>
+
+  <script src="script/quiz.js"></script>
+</body>
+</html>
